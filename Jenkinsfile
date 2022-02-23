@@ -36,7 +36,7 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build Application') {
             steps {
                 script {
                     sh 'mvn clean package'
@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('Build image') {
+        stage('Build Image') {
             steps {
                 script {
                     openshift.withCluster() {
@@ -59,7 +59,7 @@ pipeline {
             }
         }
 
-        stage("Prepare deployment") {
+        stage("Prepare Deployment") {
             steps {
                 script {
                     openshift.withCluster() {
@@ -70,14 +70,13 @@ pipeline {
                             openshift.apply(readFile("src/main/openshift/role.yaml"))
                             openshift.apply(readFile("src/main/openshift/rolebinding.yaml"))
                             openshift.apply(readFile("src/main/openshift/serviceaccount.yaml"))
-                            openshift.apply(readFile("src/main/openshift/configmap.yaml"))
                         }
                     }
                 }
             }
         }
 
-        stage('Deploy application') {
+        stage('Deploy Application') {
             steps {
                 script {
                     openshift.withCluster() {
