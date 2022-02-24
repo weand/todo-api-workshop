@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: todo-api-quarkus-monitor
+spec:
+  endpoints:
+    - interval: 30s
+      targetPort: http
+      path: /q/metrics
+      scheme: http
+  selector:
+    matchLabels:
+      app: todo-api-quarkus
