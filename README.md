@@ -10,7 +10,7 @@ docker compose -f src/main/docker/docker-compose.yaml up
 ## Dev environment
 Starting frontend and backend in different terminals:
 ```shell
-docker run --rm -p 8000:80 --name todo-web -e VUE_APP_API_BASE_URL=http://localhost:8080/api/v1/todo/ quay.io/johschmidtcc/todo-web
+docker run --rm -p 8000:8080 --name todo-web -e VUE_APP_API_BASE_URL=http://localhost:8080/api/v1/todo/ quay.io/johschmidtcc/todo-web
 ```
 ```shell script
 ./mvnw compile quarkus:dev
