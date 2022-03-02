@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: view-database-secrets
+  name: view-secrets-configmaps
 rules:
   - apiGroups: [""] # "" indicates the core API group
     resources: ["secrets", "configmaps"]
