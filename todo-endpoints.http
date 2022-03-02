@@ -1,17 +1,22 @@
+### Get all items.
+GET http://localhost:8080/api/v1/todo/
+
+
 ### Create todo item.
 POST http://localhost:8080/api/v1/todo
 Content-Type: application/json
 
 {
-  "text": "Do something"
+  "text": "Something I need to do."
 }
 
-### Get all items.
-GET http://localhost:8080/api/v1/todo
+
+### Get an item.
+GET http://localhost:8080/api/v1/todo/uuid
 
 
-### Change status.
-PATCH http://localhost:8080/api/v1/todo/cc308aa8-233c-4ff7-9b54-6ed9c71e3251
+### Update status of todo item.
+PATCH http://localhost:8080/api/v1/todo/uuid
 Content-Type: application/json
 
 {
@@ -19,19 +24,5 @@ Content-Type: application/json
 }
 
 
-### Get an item.
-GET http://localhost:8080/api/v1/todo/cc308aa8-233c-4ff7-9b54-6ed9c71e3251
-
-
 ### Delete an item.
-DELETE http://localhost:8080/api/v1/todo/cc308aa8-233c-4ff7-9b54-6ed9c71e3251
-
-
-### Get Version.
-GET http://localhost:8080/a/version
-Accept: text/plain
-
-
-### Get Stage.
-GET http://localhost:8080/a/stage
-Accept: text/plain
+DELETE http://localhost:8080/api/v1/todo/uuid

@@ -1,0 +1,16 @@
+### Liveness check.
+GET http://localhost:8080/q/health/live
+
+
+### Readiness check.
+GET http://localhost:8080/q/health/ready
+
+
+### Metrics.
+GET http://localhost:8080/q/metrics
+Accept: application/json
+
+
+### Application-scope metrics.
+GET http://localhost:8080/q/metrics/application
+Accept: application/json

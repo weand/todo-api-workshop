@@ -1,0 +1,8 @@
+### Get app version.
+GET http://localhost:8080/a/version
+Accept: text/plain
+
+
+### Get app stage.
+GET http://localhost:8080/a/stage
+Accept: text/plain

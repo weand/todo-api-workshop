@@ -1,0 +1,211 @@
+{
+  "info": {
+    "_postman_id": "2c4b3578-3ab4-43ad-bfca-7b093e7b5755",
+    "name": "OKD // Todo Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Todo // all items",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/v1/todo/",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "todo",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Todo // create item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\": \"Learn Go\"}"
+        },
+        "url": {
+          "raw": "localhost:8080/api/v1/todo",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "todo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Todo // get item",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/v1/todo/uuid",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "todo",
+            "uuid"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Todo // update status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"done\": true\n}"
+        },
+        "url": {
+          "raw": "localhost:8080/api/v1/todo/uuid",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "todo",
+            "uuid"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Todo // delete item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/v1/todo/uuid",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "todo",
+            "uuid"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "App // version",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/a/version",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "a",
+            "version"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "App // stage",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/a/stage",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "a",
+            "stage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Quarkus // liveness check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/q/health/live",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "q",
+            "health",
+            "live"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Quarkus // readiness check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/q/health/ready",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "q",
+            "health",
+            "ready"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
