@@ -19,19 +19,19 @@ import org.junit.jupiter.api.TestMethodOrder;
 @QuarkusTest
 @QuarkusTestResource(H2DatabaseTestResource.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TodoResourceTest {
+class TodoResourceTest {
 
   private static final String API_BASE_PATH = "/api/v1/todo";
 
   @Test
   @Order(1)
-  public void firstGetRequest_noEntries() {
+  void firstGetRequest_noEntries() {
     given().when().get(API_BASE_PATH + "/").then().statusCode(200).body(is("[]"));
   }
 
   @Test
   @Order(2)
-  public void createRequest() {
+  void createRequest() {
     given()
         .body("{\"text\": \"some task\"}")
         .contentType(ContentType.JSON)
@@ -42,7 +42,7 @@ public class TodoResourceTest {
 
   @Test
   @Order(3)
-  public void secondGetRequest_oneEntries() {
+  void secondGetRequest_oneEntry() {
     Response response =
         given()
             .when()
