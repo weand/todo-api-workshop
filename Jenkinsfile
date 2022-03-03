@@ -44,7 +44,6 @@ pipeline {
             }
         }
 
-        /*
         stage('Build Image') {
             steps {
                 script {
@@ -71,6 +70,7 @@ pipeline {
                             openshift.apply(readFile("src/main/openshift/role.yaml"))
                             openshift.apply(readFile("src/main/openshift/rolebinding.yaml"))
                             openshift.apply(readFile("src/main/openshift/serviceaccount.yaml"))
+                            openshift.apply(readFile("src/main/openshift/configmap.yaml"))
                         }
                     }
                 }
@@ -94,6 +94,6 @@ pipeline {
                 }
             }
         }
-        */
+        
     }
 }

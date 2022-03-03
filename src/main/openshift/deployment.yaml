@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-api-quarkus
+  namespace: andreas-cicd
+spec:
+  paused: true
+  selector:
+    matchLabels:
+      app: todo-api-quarkus
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: todo-api-quarkus
+    spec:
+      serviceAccountName:  todo-api-quarkus
+      containers:
+        - name: todo-api-quarkus
+          image: todo-api-quarkus
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          env:
+            # Define the environment variable
+            - name: APP_STAGE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+                  name: todo-api-quarkus
+                  # Specify the key associated with the value
+                  key: app.stage-name
